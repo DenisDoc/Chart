@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback, useReducer } from 'react'
+import { useState, useEffect, useCallback} from 'react'
 import classes from './Chart.module.css'
 import { Stock } from '@ant-design/plots'
-import Card from '../UI/Card'
+import Card from '../Utilities/Card'
 
    import io from 'socket.io-client'
    const socket = io.connect("http://localhost:3001", {transports : ['websocket']})
@@ -16,23 +16,6 @@ import Card from '../UI/Card'
       ]) 
    })      
    
-   const config = { 
-      data: chartData,
-      xField: 'trade_date',
-      yField: ['open', 'close', 'high', 'low'],
-   } 
-  
-   return (
-      <Card>
-         <Stock className={classes.chart} {...config} />
-      </Card> 
-   )
-};
-
-export default DemoStock
-
-
-
    // useEffect(() => {
    //    // fetchChartData() 
   
@@ -51,6 +34,18 @@ export default DemoStock
    // }, [setChartData])
 
 
+   const config = { 
+      data: chartData,
+      xField: 'trade_date',
+      yField: ['open', 'close', 'high', 'low'],
+   } 
+  
+   return (
+      <Card>
+         <Stock className={classes.chart} {...config} />
+      </Card> 
+   )
+};
 
-   
+export default DemoStock
    
