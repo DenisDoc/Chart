@@ -1,0 +1,29 @@
+.bar {
+   width: 100vw;
+   background-color: rgba(20, 28, 84, 0.5);
+   margin-bottom: 4rem;
+}
+
+.list {
+   margin: 0px;
+   padding: 0.5rem 2.5rem;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   align-items: center;
+}
+
+.list li {
+   list-style: none;
+   color: whitesmoke;
+}
+
+.bar h1 {
+   font-weight: 700;
+   font-size: 1.5rem;
+}
+
+.btn {
+   background-color: inherit;
+   border: 1px solid rgb(97, 97, 227);
+}
