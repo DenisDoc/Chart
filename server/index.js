@@ -18,6 +18,15 @@ const io = new Server(server, {
 io.on('connection', (socket) => {
     console.log(`User Connected: ${socket.id}`) 
 
+    socket.emit('data', {
+        "method": "SUBSCRIBE",
+        "params": [
+          "btcusdt@aggTrade",
+          "btcusdt@depth"
+        ],
+        "id": 1
+      })
+
     const interval = setInterval(() => {  
     const generateCandle = () => {
         return {
@@ -38,5 +47,3 @@ io.on('connection', (socket) => {
 server.listen(3001, () => {
     console.log('server is running')
 })
-
-   

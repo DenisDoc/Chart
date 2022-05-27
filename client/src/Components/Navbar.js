@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import classes from './Navbar.module.css'
 
 import AuthContext from '../store/AuthContext'
-import Button from '../UI/Button'
+import Button from '../Utilities/Button'
 
 const Navbar = () => {
    const authCtx = useContext(AuthContext)

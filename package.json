@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "sockette": "^2.0.6",
+    "sockjs": "^0.3.24",
+    "sockjs-client": "^1.6.0"
+  }
+}

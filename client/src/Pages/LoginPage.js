@@ -2,9 +2,9 @@ import { useRef, useReducer, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classes from './LoginPage.module.css'
 
-import Card from '../UI/Card'
+import Card from '../Utilities/Card'
 import AuthContext from '../store/AuthContext'
-import Button from '../UI/Button'
+import Button from '../Utilities/Button'
 
 const initState = {
    error: false,
