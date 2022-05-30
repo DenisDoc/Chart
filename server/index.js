@@ -18,14 +18,6 @@ const io = new Server(server, {
 io.on('connection', (socket) => {
     console.log(`User Connected: ${socket.id}`) 
 
-    socket.emit('data', {
-        "method": "SUBSCRIBE",
-        "params": [
-          "btcusdt@aggTrade",
-          "btcusdt@depth"
-        ],
-        "id": 1
-      })
 
     const interval = setInterval(() => {  
     const generateCandle = () => {

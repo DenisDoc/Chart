@@ -7,7 +7,7 @@ import { XAxis, YAxis } from "react-stockcharts/lib/axes"
 import { fitWidth } from "react-stockcharts/lib/helper"
 import { timeIntervalBarWidth } from "react-stockcharts/lib/utils"
 import { utcDay } from "d3-time"
-import { ema, macd, sma } from "react-stockcharts/lib/indicator"; 
+import { ema } from "react-stockcharts/lib/indicator"; 
 import { CurrentCoordinate } from "react-stockcharts/lib/coordinates";
 
 import Data from "./Data"
