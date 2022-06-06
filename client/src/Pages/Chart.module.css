@@ -1,7 +1,12 @@
 .chart {
    width: 80vw;
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
    margin-bottom: 5rem;
+   color: #f3f3f3;
+}
+
+.card{
+   margin-left: 5rem;
 }

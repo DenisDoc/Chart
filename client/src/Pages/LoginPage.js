@@ -1,10 +1,15 @@
 import { useRef, useReducer, useContext } from 'react'
+
 import { useNavigate } from 'react-router-dom'
 import classes from './LoginPage.module.css'
 
 import Card from '../Utilities/Card'
 import AuthContext from '../store/AuthContext'
 import Button from '../Utilities/Button'
+
+// import * as firebase from "firebase/app"
+import {signInWithPopup, FacebookAuthProvider} from 'firebase/auth'
+import { authentification } from '../config/firebaseConfig'
 
 const initState = {
    error: false,
@@ -64,15 +69,15 @@ const LoginPage = (props) => {
             // data && data.error && data.error.message ? errorMessage = data.error.message : 'UNEXPETED_ERR'
             data && data.error && data.error.message ? errorMessage = data.error.message : dipatchError({type: 'UNEXPETED_ERR'})
          
-         
             dipatchError({ type: errorMessage })
             throw new Error(errorMessage)
          }
 
          if (data) {
             authCtx.login(data.idToken)
+            navigate('/profile-page')
          }
-         navigate('/chart')
+        
 
       }
       catch (error) {
@@ -95,8 +100,24 @@ const LoginPage = (props) => {
 
    const inputClasses = error.error ? `${classes.errorFeedback}` : ""
 
+   const singInWithFacebook = async () => {
+     try{
+      const provider = new FacebookAuthProvider()
+      const data = await signInWithPopup(authentification, provider)
+         console.log(data)
+         if (data) {
+            authCtx.login(data.user.stsTokenManager.accessToken)
+            authCtx.userData(data.user.displayName ,data.user.photoURL)
+            navigate('/profile-page')
+         }
+     }
+     catch(error) {
+        console.log(error)
+     }
+   }
+
    return (
-      <Card>
+      <Card className={classes.container}>
          <div className={classes.form} >
             <h1>Log In</h1>
             {error.error && <p className={classes.errorMessage}>{error.errorMessage}</p>}
@@ -124,6 +145,7 @@ const LoginPage = (props) => {
                   />
                </div>
                <Button className={classes.btn} type='submit'>Login</Button>
+               <Button className={classes.btn} onClick={singInWithFacebook}>Login With Facebook</Button>
             </form>
          </div>
       </Card>

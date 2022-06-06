@@ -10,7 +10,7 @@ root.render(
    <AuthContextProvider>
          <BrowserRouter>
             <App />
-         </BrowserRouter>
+         </BrowserRouter>    
    </AuthContextProvider>
 )
 

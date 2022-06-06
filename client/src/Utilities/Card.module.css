@@ -1,5 +1,9 @@
 .wrapper {
    display: flex;
-   justify-content: center;
-   align-items: center;
+   flex-direction: column;
+   justify-content:flex-start;
+   align-items: flex-start;
+   margin-left: 10vw;
+   margin-right: 10vw;
+   gap: 2rem;
 }

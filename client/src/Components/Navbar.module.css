@@ -1,6 +1,6 @@
 .bar {
    width: 100vw;
-   background-color: rgba(20, 28, 84, 0.5);
+   background-color: rgba(20, 28, 84, 0.5) !important;
    margin-bottom: 4rem;
 }
 
@@ -26,4 +26,21 @@
 .btn {
    background-color: inherit;
    border: 1px solid rgb(97, 97, 227);
+}
+
+.dropDown{
+   color: black;
+   font-size: 5rem;
+}
+
+.linksContainer {
+   display: flex;
+   gap: 1.5rem;
+   justify-content: center;
+   align-items: center;
+}
+
+.linksContainer a:hover {
+   text-decoration: underline;
+   cursor: pointer;
 }
